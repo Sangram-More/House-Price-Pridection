@@ -110,6 +110,7 @@ def XGBoostPrediction(area, no_of_bedrooms, city, location, resale):
 # -----------------------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
+
     import pandas as pd
     import numpy as np
     import seaborn as sns
@@ -118,6 +119,14 @@ if __name__ == "__main__":
     from sklearn.model_selection import train_test_split,  cross_val_score, cross_val_predict
     from sklearn.metrics import r2_score, confusion_matrix
     from sklearn import metrics
+
+    import sys
+    area = str(sys.argv[1])
+    no_of_bedrooms = str(sys.argv[2])
+    city = str(sys.argv[3])
+    location = str(sys.argv[4])
+    resale = str(sys.argv[5])
+    model_name = str(sys.argv[6])
 
     df = pd.read_csv('../CSV/India.csv', index_col=False)
 
@@ -145,14 +154,15 @@ if __name__ == "__main__":
     # print(len(X_train), len(X_test), len(y_train), len(y_test))
 
     #Parameters
-    area = 3340
-    no_of_bedrooms = 4
-    city = int(city_name_mapping.get('Banglore'))
-    location = int(Location_name_mapping.get('JP Nagar Phase 1'))
-    resale = 0
-    model_name = 'XGBoost'
+    # area = 3340
+    # no_of_bedrooms = 4
+    # city = int(city_name_mapping.get('Banglore'))
+    # location = int(Location_name_mapping.get('JP Nagar Phase 1'))
+    # resale = 0
+    # model_name = 'XGBoost'
 
 
     ChooseModel(model_name, area, no_of_bedrooms, city, location, resale)
 
-    # print(city, location)
+# ---------------------------------------------------------------------------------------------------------------
+
