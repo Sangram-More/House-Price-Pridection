@@ -121,11 +121,11 @@ if __name__ == "__main__":
     from sklearn import metrics
 
     import sys
-    area = str(sys.argv[1])
-    no_of_bedrooms = str(sys.argv[2])
+    area = int(sys.argv[1])
+    no_of_bedrooms = int(sys.argv[2])
     city = str(sys.argv[3])
     location = str(sys.argv[4])
-    resale = str(sys.argv[5])
+    resale = int(sys.argv[5])
     model_name = str(sys.argv[6])
 
     df = pd.read_csv('../CSV/India.csv', index_col=False)
@@ -156,8 +156,8 @@ if __name__ == "__main__":
     #Parameters
     # area = 3340
     # no_of_bedrooms = 4
-    # city = int(city_name_mapping.get('Banglore'))
-    # location = int(Location_name_mapping.get('JP Nagar Phase 1'))
+    city = int(city_name_mapping.get(city))
+    location = int(Location_name_mapping.get(location))
     # resale = 0
     # model_name = 'XGBoost'
 
