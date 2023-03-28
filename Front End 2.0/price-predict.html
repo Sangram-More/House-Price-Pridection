@@ -27,9 +27,9 @@
     </header>
     <main>
         <section class="dashboard">
-            <form>
+            <form id="price">
                 <h2>Price-Predict Menu</h2>
-                <label for="City-Selection">Choose a City</label>
+                <label for="citySelection">Choose a City</label>
                 <select id="city-select" name="City" onchange="LocalitySelector()">
                     <option value="City">Select a City</option>
                     <option value="City-1">Delhi</option>
@@ -39,7 +39,7 @@
                     <option value="City-5">Benguluru</option>
                     <option value="City-6">Chennai</option>
                 </select>
-                <label for="Locality-Selection">Choose any Locality</label>
+                <label for="localitySelection">Choose any Locality</label>
                 <select id="locality-select" name="Locality">
                     <option value="locality">Select a Locality</option>
                     <option value="locality-1">Uttam Nagar</option>
@@ -83,8 +83,10 @@
             </aside>
         </section>
     </main>
+    <div id="output"></div>
     <script src="price-predict.js">
     </script>
+    <script src="output.js"></script>
 </body>
 
 </html>
